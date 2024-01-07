@@ -41,3 +41,7 @@ The default pin configuration of the driver is shown below. Physical pin mapping
 | SPI_MOSI       | PA7       | 16                  | A6                | Purple      |
 | GND            | N/A       | 19                  | GND               | Black       |
 | VCC_TARGET     | N/A       | 20                  | +3V3              | Yellow      |
+
+Images of the ATWINC15x0-XPRO and NUCLEO-F303K8 wiring with the default pin configuration:
+
+<img src="Documentation/NUCLEO_F303K8.jpg" width=300 /> <img src="Documentation/ATWINC15x0_XPRO.jpg" width=300 />
