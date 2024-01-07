@@ -1,5 +1,7 @@
-# STM32F3-WINC15x0-Driver
+# STM32F3 WINC15x0 Driver
 Microchip's WINC driver for the ATWINC15x0, ported for the STM32F3 series of microcontrollers.
+
+This is currently the latest version of the driver, 19.7.7, which is shipped with the Atmel Advanced Software Framework (ASF).
 
 ## General Usage
 **Prerequisites:** this driver depends on the STM32Cube HAL API for the STM32F3 series.
