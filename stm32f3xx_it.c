@@ -4,8 +4,7 @@
 #include "conf_winc.h"
 
 
-void EXTI3_IRQHandler(void)
-{
+void EXTI3_IRQHandler(void) {
     if (__HAL_GPIO_EXTI_GET_IT(WINC_IRQN_PIN)) {
         HAL_GPIO_EXTI_IRQHandler(WINC_IRQN_PIN);
     }
