@@ -22,6 +22,18 @@ This is currently the latest version of the driver, 19.7.7, which is shipped wit
 6. To properly include the board support package, define the `STM32F3` macro when compiling.
     - Go to *... > MCU GCC Compiler > Preprocessor*, and add `STM32F3` to the *Define symbols (-D)* list.
 7. Change the pin configuration, if necessary, in `config/conf_winc.c` and `config/conf_winc.h`. See [Pin configuration](#pin-configuration).
+8. Ensure the HAL API is correctly initialised and includes all relevant peripheral header files.
+    - In *stm32f3xx_hal_conf.h*, define the following macros:
+        - `HAL_SPI_MODULE_ENABLED` for *stm32f3xx_hal_spi.h*.
+        - `HAL_GPIO_MODULE_ENABLED` for *stm32f3xx_hal_gpio.h*.
+        - `HAL_RCC_MODULE_ENABLED` for *stm32f3xx_hal_rcc.h*.
+        - `HAL_CORTEX_MODULE_ENABLED` for *stm32f3xx_hal_cortex.h*.
+9. Copy the above header files and respective source files into the project.
+    - For a minimally configured STM32CubeIDE project, this will probably involve the following files, which can be copied from *%USERPROFILE%\STM32Cube\Repository\*:
+        - *stm32f3xx_hal_cortex.h* and *stm32f3xx_hal_cortex.c*.
+        - *stm32f3xx_hal_gpio.h*, *stm32f3xx_hal_gpio_ex.h*, and *stm32f3xx_hal_gpio.c*.
+        - *stm32f3xx_hal_rcc.h*, *stm32f3xx_hal_rcc_ex.h*, *stm32f3xx_hal_rcc.c*, and *stm32f3xx_hal_rcc_ex.c*.
+        - *stm32f3xx_hal_spi.h*, *stm32f3xx_hal_spi_ex.h*, *stm32f3xx_hal_spi.c*, and *stm32f3xx_hal_spi_ex.c*.
 
 ## Pin configuration
 The ATWINC15x0's RESET_N, CHIP_EN, and IRQN pins can be connected to any unused GPIO pin on the STM32. The SPI pins must be connected to STM32 GPIO pins that have an alternative function mapping to the chosen SPI instance.
